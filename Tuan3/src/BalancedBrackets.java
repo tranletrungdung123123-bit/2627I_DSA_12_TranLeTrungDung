@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.Stack;
 
 public class BalancedBrackets {
@@ -10,8 +11,7 @@ public class BalancedBrackets {
 
             if (kyTu == '(' || kyTu == '[' || kyTu == '{') {
                 stack.push(kyTu);
-            }
-            else {
+            } else {
 
                 if (stack.isEmpty()) {
                     return "NO";
@@ -42,9 +42,17 @@ public class BalancedBrackets {
 
     public static void main(String[] args) {
 
-        System.out.println(isBalanced("{[()]}"));
-        System.out.println(isBalanced("{[(])}"));
-        System.out.println(isBalanced("{{[[(())]]}}"));
-        System.out.println(isBalanced("((("));
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < n; i++) {
+            String s = sc.nextLine();
+
+            System.out.println(isBalanced(s));
+        }
+
+        sc.close();
     }
 }
